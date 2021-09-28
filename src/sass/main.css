@@ -45,16 +45,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  /*  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-direction: column; */
+  flex-direction: column;
+  /*  -webkit-box-pack: start;
+  -ms-flex-pack: start; */
+  justify-content: flex-start;
+  /*  -webkit-box-align: center;
+  -ms-flex-align: center; */
+  align-items: center;
   padding-right: 30px;
   padding-left: 30px;
 }
@@ -64,8 +64,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-top: 100px;
   margin-bottom: 20px;
 }
@@ -74,10 +74,9 @@ body {
   margin-right: 30px;
   width: 500px;
   border: 1px solid white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  box-sizing: border-box;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 10px;
   background-color: inherit;
   padding-top: 15px;
@@ -110,8 +109,8 @@ body {
   min-width: 200px;
   height: 50px;
   background-color: #2196f3;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 10px;
   font-weight: 700;
@@ -138,14 +137,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: center;
 }
 
 .photo-card {
@@ -154,26 +151,22 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+
+  flex-direction: column;
+
+  justify-content: center;
   background-color: #fff;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .photo-card__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+
+  flex-direction: column;
   margin: 15px;
   width: calc((100% - 8 * 15px) / 4);
   border-radius: 10px;
@@ -188,10 +181,10 @@ body {
   display: block;
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+
+  object-fit: cover;
   height: 15vw;
-  -webkit-transition: -webkit-transform linear 250ms;
+
   transition: -webkit-transform linear 250ms;
   transition: transform linear 250ms;
   transition: transform linear 250ms, -webkit-transform linear 250ms;
@@ -200,17 +193,16 @@ body {
 .photo-image:hover {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+
+  transform: scale(1.1);
 }
 
 .stats {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+
+  justify-content: center;
   margin-top: 10px;
 }
 
@@ -218,13 +210,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+
+  flex-direction: column;
+
+  justify-content: center;
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 10px;
@@ -239,9 +228,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+
+  justify-content: center;
   margin-bottom: 10px;
   color: #2196f3;
 }
@@ -252,11 +240,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -276,7 +264,7 @@ body {
 .basicLightbox__placeholder {
   max-width: 100%;
   -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
   -webkit-transition: -webkit-transform 0.4s ease;
   transition: -webkit-transform 0.4s ease;
   transition: transform 0.4s ease;
@@ -320,6 +308,5 @@ body {
 
 .basicLightbox--visible .basicLightbox__placeholder {
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
-/*# sourceMappingURL=main.css.map */

@@ -8,7 +8,7 @@ import '@pnotify/countdown/dist/PNotifyCountdown.css';
 import { alert } from '@pnotify/core';
 import notificationOptions from './js/notificationSettings.js';
 import * as basicLightbox from 'basiclightbox';
-
+import { debounce } from 'debounce';
 const refs = {
   searchForm: document.querySelector('#search-form'),
   gallery: document.querySelector('.gallery'),
@@ -21,7 +21,7 @@ const observer = new IntersectionObserver(observerCallback, {
   threshold: 0,
 });
 
-refs.searchForm.addEventListener('submit', onSearch);
+refs.searchForm.addEventListener('change', onSearch);
 refs.gallery.addEventListener('click', onMakeBigImage);
 window.addEventListener('scroll', onAddObserver);
 
@@ -84,6 +84,9 @@ async function onLoadMore() {
 }
 
 function onMakeBigImage(e) {
+  if (e.target.className !== 'photo-image') {
+    return;
+  }
   const largeImagePath = e.target.dataset.large_img;
   const instance = basicLightbox.create(`<img src="${largeImagePath}">`);
 
