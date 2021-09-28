@@ -48,6 +48,7 @@ async function onSearch(e) {
   }
 
   if (apiService.query === '') {
+    goPro(e);
     return alert(notificationOptions.notMachResults);
   }
   if (fetchTotalHits > 0) {
@@ -91,4 +92,16 @@ function onMakeBigImage(e) {
   const instance = basicLightbox.create(`<img src="${largeImagePath}">`);
 
   instance.show();
+}
+function goPro(e) {
+  /*   e.target.value = 'Писать сюда';
+  setInterval(() => {
+    e.target.value = '';
+  }, 2000); */
+  console.log(refs.anchor.classList);
+  e.target.value = '';
+  refs.anchor.classList.toggle('pro');
+  setTimeout(() => {
+    refs.anchor.classList.toggle('pro');
+  }, 5000);
 }
