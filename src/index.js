@@ -14,6 +14,7 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   body: document.querySelector('body'),
   anchor: document.querySelector('.anchor'),
+  input: document.querySelector('.search-form__input'),
 };
 
 const apiService = new ApiService();
@@ -21,7 +22,8 @@ const observer = new IntersectionObserver(observerCallback, {
   threshold: 0,
 });
 
-refs.searchForm.addEventListener('change', onSearch);
+refs.searchForm.addEventListener('submit', onSearch);
+refs.input.addEventListener('input', debounce(onSearch, 500));
 refs.gallery.addEventListener('click', onMakeBigImage);
 window.addEventListener('scroll', onAddObserver);
 
@@ -36,7 +38,12 @@ function onAddObserver() {
 async function onSearch(e) {
   e.preventDefault();
 
-  apiService.query = e.currentTarget.elements.query.value.trim();
+  if (e.target.nodeName === 'FORM') {
+    apiService.query = e.currentTarget.elements.query.value.trim();
+  }
+  if (e.target.nodeName === 'INPUT') {
+    apiService.query = e.target.value.trim();
+  }
 
   apiService.resetPage();
   clearGallery();
@@ -48,7 +55,7 @@ async function onSearch(e) {
   }
 
   if (apiService.query === '') {
-    goPro(e);
+    helpFoundInput(e);
     return alert(notificationOptions.notMachResults);
   }
   if (fetchTotalHits > 0) {
@@ -93,11 +100,7 @@ function onMakeBigImage(e) {
 
   instance.show();
 }
-function goPro(e) {
-  /*   e.target.value = 'Писать сюда';
-  setInterval(() => {
-    e.target.value = '';
-  }, 2000); */
+function helpFoundInput(e) {
   console.log(refs.anchor.classList);
   e.target.value = '';
   refs.anchor.classList.toggle('pro');
