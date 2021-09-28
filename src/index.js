@@ -9,6 +9,8 @@ import { alert } from '@pnotify/core';
 import notificationOptions from './js/notificationSettings.js';
 import * as basicLightbox from 'basiclightbox';
 import { debounce } from 'debounce';
+import { throttle } from 'throttle-debounce';
+console.log(throttle);
 const refs = {
   searchForm: document.querySelector('#search-form'),
   gallery: document.querySelector('.gallery'),
@@ -18,7 +20,7 @@ const refs = {
 };
 
 const apiService = new ApiService();
-const observer = new IntersectionObserver(observerCallback, {
+const observer = new IntersectionObserver(throttle(500, true, observerCallback), {
   threshold: 0,
 });
 
@@ -82,9 +84,10 @@ function clearGallery() {
   refs.gallery.innerHTML = '';
 }
 
-async function onLoadMore() {
-  await fetchImages();
-  const fetchTotalHits = await apiService.fetchTotalHits();
+function onLoadMore() {
+  fetchImages();
+  console.log(apiService.query);
+  const fetchTotalHits = apiService.fetchTotalHits();
   if (refs.gallery.children.length >= fetchTotalHits) {
     observer.unobserve(refs.anchor);
     alert(notificationOptions.imagesAreOver);
