@@ -3,22 +3,22 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://popingalov.github.io/popingalov-goit-js-hw-13-image-finder/",
+  "homepage": "https://popingalov.github.io/goit-js-hw-13-image-finder/",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /popingalov-goit-js-hw-13-image-finder/",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-13-image-finder/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://popingalov.github.io/popingalov-goit-js-hw-13-image-finder.git"
+    "url": "git+https://popingalov.github.io/goit-js-hw-13-image-finder.git"
   },
   "keywords": [],
   "author": "Happy_Druid",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/popingalov/popingalgoit-js-hw-13-image-finder/issues"
+    "url": "https://github.com/popingalov/js-hw-13-image-finder/issues"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
