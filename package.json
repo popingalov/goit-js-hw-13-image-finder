@@ -34,6 +34,8 @@
     "@pnotify/mobile": "^5.2.0",
     "basiclightbox": "^5.0.4",
     "debounce": "^1.2.1",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "lodash.throttle": "^4.1.1",
+    "throttle": "^1.0.3"
   }
 }
